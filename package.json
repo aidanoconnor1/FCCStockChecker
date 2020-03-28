@@ -6,8 +6,8 @@
 	"scripts": {
 		"start": "nodemon server.js",
 		"build": "cd client && npm run build",
-		"install-client":"cd client && npm install",
-		"heroku-postbuild":"npm run install-client && npm run build"
+		"install-client": "cd client && npm install",
+		"heroku-postbuild": "npm run install-client && npm run build"
 	},
 	"dependencies": {
 		"body-parser": "^1.15.2",
@@ -20,11 +20,12 @@
 		"mocha": "^3.2.0",
 		"mongodb": "^2.2.16",
 		"mongoose": "^5.9.6",
+		"node": "^13.12.0",
 		"node-fetch": "^2.6.0",
 		"zombie": "^5.0.5"
 	},
 	"engines": {
-		"node": "4.4.3"
+		"node": "4.7.0"
 	},
 	"repository": {
 		"type": "git",
