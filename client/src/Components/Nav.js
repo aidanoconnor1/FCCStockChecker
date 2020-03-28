@@ -1,6 +1,5 @@
 import React from 'react'
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core'
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import CodeIcon from '@material-ui/icons/Code';
 import { makeStyles } from '@material-ui/core/styles'
@@ -20,8 +19,7 @@ const useStyles = makeStyles(theme => ({
         bottom: 0,
         color:'blue',
         margin:'15px',
-        borderRadius:'10px',
-      
+        borderRadius:'10px', 
         boxShadow: theme.shadows[3]    
       },
       nav:{
