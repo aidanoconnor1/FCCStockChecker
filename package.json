@@ -28,10 +28,6 @@
 	"engines": {
 		"node": "12.15.0"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://hyperdev.com/#!/project/welcome-project"
-	},
 	"keywords": [
 		"node",
 		"hyperdev",
