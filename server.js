@@ -18,17 +18,25 @@ app.use(cors({origin: '*'})); //For FCC testing purposes only
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+
 //Index page (static HTML)
+app.use(express.static(path.join(__dirname, 'PersonalLibary/client/build')));
+/*
 app.route('/')
   .get(function (req, res) {
     res.sendFile(process.cwd() + '/views/index.html');
   });
-
+*/
 //For FCC testing purposes
 fccTestingRoutes(app);
 
 //Routing for API 
 apiRoutes(app);  
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'PersonalLibary/client/build', 'index.html'));
+});
     
 //404 Not Found Middleware
 app.use(function(req, res, next) {
@@ -36,6 +44,10 @@ app.use(function(req, res, next) {
     .type('text')
     .send('Not Found');
 });
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'))
+}
 
 //Start our server and tests!
 app.listen(process.env.PORT || 5000, function () {
