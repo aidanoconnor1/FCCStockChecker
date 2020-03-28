@@ -50,7 +50,7 @@ const Nav = () => {
   showLabels
   className={classes.stickToBottom}
 >
-  <a href=""><BottomNavigationAction  icon={<PersonOutlineOutlinedIcon />} /> </a>
+  <a href="http://localhost:3002"><BottomNavigationAction  icon={<PersonOutlineOutlinedIcon />} /> </a>
   <a href={fccLink} className={classes.text}> <BottomNavigationAction label="FreeCodeCamp" icon={<CodeIcon />} /> </a>
   <a href={githublink} ><BottomNavigationAction label="GitHub" icon={<GitHubIcon />} /> </a>
 </BottomNavigation>

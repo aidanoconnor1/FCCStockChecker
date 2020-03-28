@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     },
     textboxs:{
         position:"relative",
-        right:'50px',
+        right:'10px',
         padding:'10px'
 
     },
@@ -27,8 +27,8 @@ const useStyles = makeStyles({
     },
     likes:{
         position:"relative",
-        right:'50px',
-        top:'15px'
+        right:'10px',
+        
 
     },
     subtitle:{
@@ -43,13 +43,14 @@ const useStyles = makeStyles({
     },
     buttons:{
         position:"relative",
-        right:'295px',
+        right:'290px',
         marginBottom:'20px'
     },
     buttons2:{
         position:"relative",
-        right:'290px',
-        marginBottom:'20px'
+        right:'575px',
+        top:'75px',
+        marginBottom:'40px'
     }
 })
 

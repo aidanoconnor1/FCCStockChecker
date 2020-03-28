@@ -18,6 +18,7 @@ const useStyles = makeStyles({
     surface:{
         position:"relative",
         width:'700px',
+        height:'380px',
         left:'600px',
         top:'250px',
         borderRadius:'10px'
@@ -101,6 +102,8 @@ export const Surface = () => {
                   checked={checked} checkedTwo={checkedTwo} handleChecked={handleChecked}
                    handleCheckedTwo={handleCheckedTwo} checkStockOptions={checkStockOptions}
                    compareStockOptions={compareStockOptions}  />
+                   <br></br>
+                   <br></br>
                 <Typed  strings={stockData} typeSpeed={30}  loop />
                
                 
