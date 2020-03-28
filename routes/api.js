@@ -16,6 +16,7 @@ const CONNECTION_STRING = process.env.DB;
 var connection = mongoose.connection;
 const StockLike = require('./stockLike')
 require('dotenv').config()
+const path = require('path');
 
 
 mongoose.connect(process.env.DB, {useNewUrlParser: true, useUnifiedTopology: true})
