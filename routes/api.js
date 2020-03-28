@@ -35,7 +35,7 @@ console.log(req.query)
 if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=false
 
   Promise.all([
-  fetch(`https://cloud.iexapis.com/stable/stock/${stock}/quote?token=${process.env.key}`)
+  fetch(`https://cloud.iexapis.com/stable/stock/${stock}/quote?token=pk_1e07d6c482c14e9aa2fbcfe3c133ba92`)
   .then((result) => result.json()),
   fetch(`https://fccstockchecker.herokuapp.com/api/info/${stock}`)
   .then((info) => info.json())
@@ -49,7 +49,7 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
 } else if(!Array.isArray(req.query.stock)&&req.query.like){   //not array and like=true
   console.log('one')
   Promise.all([
-    fetch(`https://cloud.iexapis.com/stable/stock/${stock}/quote?token=${process.env.key}`)
+    fetch(`https://cloud.iexapis.com/stable/stock/${stock}/quote?token=pk_1e07d6c482c14e9aa2fbcfe3c133ba92`)
   .then((result) => result.json())
   .catch((err) => console.log(err)) ,
   fetch(`https://fccstockchecker.herokuapp.com/api/like/${stock}`)
@@ -68,9 +68,9 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
    else if (Array.isArray(req.query.stock)&&req.query.like){    // is Array and Like=true
    
       Promise.all([
-      fetch(`https://cloud.iexapis.com/stable/stock/${stock[0]}/quote?token=${process.env.key}`)
+      fetch(`https://cloud.iexapis.com/stable/stock/${stock[0]}/quote?token=pk_1e07d6c482c14e9aa2fbcfe3c133ba92`)
       .then(result => result.json()),
-      fetch(`https://cloud.iexapis.com/stable/stock/${stock[1]}/quote?token=${process.env.key}`)
+      fetch(`https://cloud.iexapis.com/stable/stock/${stock[1]}/quote?token=pk_1e07d6c482c14e9aa2fbcfe3c133ba92`)
       .then(result => result.json()),
       fetch(`https://fccstockchecker.herokuapp.com/api/like/${stock[0]}`)
       .then((stock) => stock.json())
@@ -91,9 +91,9 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
    }    else{  //is Array like=false
    
     Promise.all([
-    fetch(`https://cloud.iexapis.com/stable/stock/${stock[0]}/quote?token=${process.env.key}`)
+    fetch(`https://cloud.iexapis.com/stable/stock/${stock[0]}/quote?token=pk_1e07d6c482c14e9aa2fbcfe3c133ba92`)
     .then(result => result.json()),
-    fetch(`https://cloud.iexapis.com/stable/stock/${stock[1]}/quote?token=${process.env.key}`)
+    fetch(`https://cloud.iexapis.com/stable/stock/${stock[1]}/quote?token=pk_1e07d6c482c14e9aa2fbcfe3c133ba92`)
     .then(result => result.json()),
     fetch(`https://fccstockchecker.herokuapp.com/api/info/${stock[0]}`)
     .then((stock) => stock.json())
