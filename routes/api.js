@@ -14,7 +14,7 @@ const mongoose = require('mongoose')
 const fetch = require('node-fetch');
 const CONNECTION_STRING = process.env.DB; 
 var connection = mongoose.connection;
-const StockLike = require('./stockLike')
+const StockLike = require('./StockLike')
 require('dotenv').config()
 const path = require('path');
 
