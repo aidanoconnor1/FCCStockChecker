@@ -154,6 +154,7 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
           StockLike.find({ })
             .then(data => res.json(data)) 
             .catch((err) => console.log(err))
+            console.log('hi')
         })
   
     ;
