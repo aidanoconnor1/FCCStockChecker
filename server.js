@@ -11,9 +11,9 @@ var runner            = require('./test-runner');
 const path = require('path');
 require('dotenv').config()
 var app = express();
-
+/*
 app.use('/public', express.static(process.cwd() + '/public'));
-
+*/
 app.use(cors({origin: '*'})); //For FCC testing purposes only
 
 app.use(bodyParser.json());
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //Index page (static HTML)
-app.use(express.static(path.join(__dirname, 'PersonalLibary/client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 /*
 app.route('/')
   .get(function (req, res) {
@@ -36,7 +36,7 @@ fccTestingRoutes(app);
 apiRoutes(app);  
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'PersonalLibary/client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
     
 //404 Not Found Middleware
