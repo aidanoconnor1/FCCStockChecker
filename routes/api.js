@@ -37,7 +37,7 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
   Promise.all([
   fetch(`https://cloud.iexapis.com/stable/stock/${stock}/quote?token=${process.env.key}`)
   .then((result) => result.json()),
-  fetch(`http://localhost:5000/api/info/${stock}`)
+  fetch(`https://fccstockchecker.herokuapp.com/api/info/${stock}`)
   .then((info) => info.json())
   ])
   .then(json => res.json({stockData:{stock:json[0].symbol,
@@ -52,7 +52,7 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
     fetch(`https://cloud.iexapis.com/stable/stock/${stock}/quote?token=${process.env.key}`)
   .then((result) => result.json())
   .catch((err) => console.log(err)) ,
-  fetch(`http://localhost:5000/api/like/${stock}`)
+  fetch(`https://fccstockchecker.herokuapp.com/api/like/${stock}`)
   .then((stock) => stock.json())
   .catch((err) => console.log(err))
   ])
@@ -72,10 +72,10 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
       .then(result => result.json()),
       fetch(`https://cloud.iexapis.com/stable/stock/${stock[1]}/quote?token=${process.env.key}`)
       .then(result => result.json()),
-      fetch(`http://localhost:5000/api/like/${stock[0]}`)
+      fetch(`https://fccstockchecker.herokuapp.com/api/like/${stock[0]}`)
       .then((stock) => stock.json())
       .catch((err) => console.log(err)),
-      fetch(`http://localhost:5000/api/like/${stock[1]}`)
+      fetch(`https://fccstockchecker.herokuapp.com/api/like/${stock[1]}`)
       .then((stock) => stock.json())
       .catch((err) => console.log(err))  
      ])
@@ -95,10 +95,10 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
     .then(result => result.json()),
     fetch(`https://cloud.iexapis.com/stable/stock/${stock[1]}/quote?token=${process.env.key}`)
     .then(result => result.json()),
-    fetch(`http://localhost:5000/api/info/${stock[0]}`)
+    fetch(`https://fccstockchecker.herokuapp.com/api/info/${stock[0]}`)
     .then((stock) => stock.json())
     .catch((err) => console.log(err)),
-    fetch(`http://localhost:5000/api/info/${stock[1]}`)
+    fetch(`https://fccstockchecker.herokuapp.com/api/info/${stock[1]}`)
     .then((stock) => stock.json())
     .catch((err) => console.log(err))  
    ])
@@ -154,7 +154,7 @@ if (!Array.isArray(req.query.stock)&&!req.query.like) {  //not array and like=fa
           StockLike.find({ })
             .then(data => res.json(data)) 
             .catch((err) => console.log(err))
-            console.log('hi')
+           
         })
   
     ;

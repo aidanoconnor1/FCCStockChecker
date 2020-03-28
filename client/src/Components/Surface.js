@@ -55,12 +55,12 @@ export const Surface = () => {
         checkStockRequest()
     }
     const checkStockLikeRequest = () => {
-        axios.get(`http://localhost:5000/api/stock-prices?stock=${checkStock}&like=true`)
+        axios.get(`https://fccstockchecker.herokuapp.com/api/stock-prices?stock=${checkStock}&like=true`)
         .then((data) => setStockData([JSON.stringify(data.data.stockData)] )) 
     }
     const checkStockRequest = () => {
      
-        axios.get(`http://localhost:5000/api/stock-prices?stock=${checkStock}`)
+        axios.get(`https://fccstockchecker.herokuapp.com/api/stock-prices?stock=${checkStock}`)
         .then((data) => setStockData([JSON.stringify(data.data.stockData)] )) 
        
     }
@@ -73,12 +73,12 @@ export const Surface = () => {
         }
     }
     const compareLikeRequest = () => {
-        axios.get(`http://localhost:5000/api/stock-prices?stock=${compareStockOne}&stock=${compareStockTwo}&like=true`)
+        axios.get(`https://fccstockchecker.herokuapp.com/api/stock-prices?stock=${compareStockOne}&stock=${compareStockTwo}&like=true`)
         .then((data) => setStockData([JSON.stringify(data.data.stockData)] )) 
        
     }
     const compareRequest = () => {
-        axios.get(`http://localhost:5000/api/stock-prices?stock=${compareStockOne}&stock=${compareStockTwo}`)
+        axios.get(`https://fccstockchecker.herokuapp.com/api/stock-prices?stock=${compareStockOne}&stock=${compareStockTwo}`)
         .then((data) => setStockData([JSON.stringify(data.data.stockData)] )) 
        
     }
