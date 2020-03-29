@@ -17,10 +17,11 @@ const useStyles = makeStyles({
     },
     surface:{
         position:"relative",
-        width:'700px',
-        height:'380px',
-        left:'600px',
-        top:'250px',
+        marginTop:'10%',
+        width:'40%',
+        height:'380%',
+        left:'30%',
+        top:'50%',
         borderRadius:'10px'
     }
 })

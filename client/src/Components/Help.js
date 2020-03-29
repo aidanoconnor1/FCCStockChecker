@@ -26,8 +26,9 @@ const useStyles = makeStyles(theme => ({
   },
   fab:{
       position:"relative",
-      right:"-860px",
-      top:"30px"
+      right:"-47%",
+      marginTop:'2%',
+      top:"30%"
   }
 }));
 

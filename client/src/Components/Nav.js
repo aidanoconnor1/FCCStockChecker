@@ -14,8 +14,8 @@ const useStyles = makeStyles(theme => ({
     stickToBottom: {
         width: '15%',
         position: 'relative',
-        top:'450px',
-        right:'-780px',
+        marginTop:'15%',
+        right:'-42%',
         bottom: 0,
         color:'blue',
         margin:'15px',
@@ -50,7 +50,7 @@ const Nav = () => {
   showLabels
   className={classes.stickToBottom}
 >
-  <a href="http://localhost:3002"><BottomNavigationAction  icon={<PersonOutlineOutlinedIcon />} /> </a>
+  <BottomNavigationAction  icon={<PersonOutlineOutlinedIcon />} /> 
   <a href={fccLink} className={classes.text}> <BottomNavigationAction label="FreeCodeCamp" icon={<CodeIcon />} /> </a>
   <a href={githublink} ><BottomNavigationAction label="GitHub" icon={<GitHubIcon />} /> </a>
 </BottomNavigation>
