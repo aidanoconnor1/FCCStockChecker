@@ -7,7 +7,7 @@ import Fab from '@material-ui/core/Fab'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 import Grid from '@material-ui/core/Grid'
-
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -17,16 +17,18 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: '1px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
   questionmark:{
-      size:'16px'
+      size:'4px'
   },
-  fab:{    
-      marginTop:'2%',
-      marginRight:'2%'    
+  fab:{
+    position:"float",    
+      marginTop:'1%',
+      marginRight:'4%',
+      width:'5px'    
   }
 }));
 
@@ -47,9 +49,9 @@ export default function Help() {
   return (
     <div>
       <Grid container justify="flex-end">
-      <Fab className={classes.fab} color="primary" aria-label="add" onClick={handleOpen}>
+      <IconButton  size="small" className={classes.fab} aria-label="add" onClick={handleOpen}>
       <FontAwesomeIcon  size='2x' icon={faQuestion} />
-      </Fab>
+      </IconButton>
       </Grid>
       <Modal
         aria-labelledby="transition-modal-title"

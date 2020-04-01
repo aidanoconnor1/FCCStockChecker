@@ -4,7 +4,8 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import CodeIcon from '@material-ui/icons/Code';
 import { makeStyles } from '@material-ui/core/styles'
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
-
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles(theme => ({
@@ -12,11 +13,8 @@ const useStyles = makeStyles(theme => ({
         width:500
     },
     stickToBottom: {
-        width: '15%',
-        position: 'relative',
-        marginTop:'15%',
-        right:'-42%',
-        bottom: 0,
+        width: '260px',
+        marginTop:'10%',
         color:'blue',
         margin:'15px',
         borderRadius:'10px', 
@@ -25,9 +23,17 @@ const useStyles = makeStyles(theme => ({
       nav:{
         border: '2px solid #000',
     boxShadow: theme.shadows[5],
-      },
+      },text:{
+        largeIcon:{
+          width:'100%',
+          height:'100%'
+        }
+
+      }
      
 }))
+
+
 
 const Nav = () => {
 
@@ -37,6 +43,7 @@ const Nav = () => {
   const githublink = "https://github.com/aidanoconnor1/FCCStockChecker"
    return (
      
+    <Grid container justify="center">
     <BottomNavigation
     
     
@@ -54,6 +61,7 @@ const Nav = () => {
   <a href={fccLink} className={classes.text}> <BottomNavigationAction label="FreeCodeCamp" icon={<CodeIcon />} /> </a>
   <a href={githublink} ><BottomNavigationAction label="GitHub" icon={<GitHubIcon />} /> </a>
 </BottomNavigation>
+</Grid>
 
 )}
 

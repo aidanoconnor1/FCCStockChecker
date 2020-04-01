@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Typed from 'react-typed';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles'
 import { Form } from './Form'
 import { Paper, Typography } from '@material-ui/core'
 import 'typeface-roboto'
 import { makeStyles } from '@material-ui/core/styles'
 import  Help  from './Help'
+import MobileHelp from './MobileHelp'
 const axios = require('axios');
-
 
 
 const useStyles = makeStyles({
@@ -22,7 +24,21 @@ const useStyles = makeStyles({
         height:'380%',
         left:'30%',
         top:'50%',
+        borderRadius:'10px',
+        
+    },
+    border:{
+        position:"relative",
+        justifyContent:"center",
+        left:'5%',
+        top:'50%',
+        width:'90%',
+        height:'420%',
         borderRadius:'10px'
+    },
+    result:{
+        position:"relative",
+        bottom:"10%"
     }
 })
 
@@ -31,8 +47,16 @@ export const Surface = () => {
     const [checkStock, setCheckStock] = useState('')
     const [compareStockOne, setCompareStockOne] = useState('')
     const [compareStockTwo, setCompareStockTwo] = useState('')
-    const [checked, setChecked] = React.useState(false)
-    const [checkedTwo, setCheckedTwo] = React.useState(false)
+    const [checked, setChecked] = useState(false)
+    const [checkedTwo, setCheckedTwo] = useState(false)
+    const [lineOne, setLineOne] = useState([''])
+    const [lineTwo, setLineTwo] = useState([''])
+    const [bothLines, setBothLines] = useState([''])
+
+    const theme = useTheme()    
+    const classes = useStyles()
+    const fullScreen = useMediaQuery(theme.breakpoints.up('md'))
+    const smallScreen = useMediaQuery(theme.breakpoints.down("sm"))
 
     const handleCheckText = (e) => {
         setCheckStock(e.target.value)
@@ -57,7 +81,7 @@ export const Surface = () => {
     }
     const checkStockLikeRequest = () => {
         axios.get(`https://fccstockchecker.herokuapp.com/api/stock-prices?stock=${checkStock}&like=true`)
-        .then((data) => setStockData([JSON.stringify(data.data.stockData)] )) 
+        .then((data) => setStockData([JSON.stringify(data.data.stockData)] ) ) 
     }
     const checkStockRequest = () => {
      
@@ -85,14 +109,40 @@ export const Surface = () => {
     }
 
 
-//
 
-    const classes = useStyles()
 
     return (
         <div>
-      <Help />
+            {console.log(window.innerWidth)}
+{smallScreen && 
+<>      
+        
+        <Paper elevation={2} className={classes.border}>
+        <MobileHelp />
+            <Typography variant="h4" className={classes.text} >
+                Nasdaq Stock Price Checker
+            </Typography>
+            <Form checkStock={checkStock} handleCheckText={handleCheckText} 
+            compareStockOne={compareStockOne} compareStockTwo={compareStockTwo}
+             handleCompareTextOne={handleCompareTextOne} handleCompareTextTwo={handleCompareTextTwo}
+              checked={checked} checkedTwo={checkedTwo} handleChecked={handleChecked}
+               handleCheckedTwo={handleCheckedTwo} checkStockOptions={checkStockOptions}
+               compareStockOptions={compareStockOptions}  />
+               <br></br>
+               <br></br>
+            <Typed className={classes.result}  strings={stockData} typeSpeed={30}  loop />
+            <br></br>
+            <br></br>
+            <br></br>
             
+        </Paper>
+        </>}
+
+
+{fullScreen &&  
+<>     
+      <Help />
+        
             <Paper elevation={2} className={classes.surface}>
                 <Typography variant="h4" className={classes.text} >
                     Nasdaq Stock Price Checker
@@ -105,11 +155,14 @@ export const Surface = () => {
                    compareStockOptions={compareStockOptions}  />
                    <br></br>
                    <br></br>
-                <Typed  strings={stockData} typeSpeed={30}  loop />
-               
-                
+             
+                   <Typed  strings={stockData} typeSpeed={30}  loop />
+                   <br></br>
+                   <br></br>
+
             </Paper>
-            
+            </>
+}
             
         </div>
     )
