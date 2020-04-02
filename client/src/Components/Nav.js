@@ -14,9 +14,9 @@ const useStyles = makeStyles(theme => ({
     },
     stickToBottom: {
         width: '260px',
-        marginTop:'10%',
+        marginTop:'1%',
         color:'blue',
-        margin:'15px',
+        margin:'1px',
         borderRadius:'10px', 
         boxShadow: theme.shadows[3]    
       },

@@ -56,7 +56,7 @@ export const Form = ({ handleCheckText, checkStock, handleCompareTextOne, compar
 
 const fullScreen = useMediaQuery(theme.breakpoints.up('lg'))
 
-const xsScreen = useMediaQuery(theme.breakpoints.down('sm'))
+
 
 const smallScreen = useMediaQuery(theme.breakpoints.down("md"))
 const likeFix = useMediaQuery('(min-width:1659)')

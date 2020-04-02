@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: '1px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
       size:'16px'
   },
   fab:{    
-      marginTop:'2%',
+      marginTop:'1%',
       marginRight:'2%'    
   }
 }));

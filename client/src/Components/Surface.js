@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Typed from 'react-typed';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles'
@@ -19,11 +19,11 @@ const useStyles = makeStyles({
     },
     surface:{
         position:"relative",
-        marginTop:'10%',
+        marginTop:'5%',
         width:'40%',
         height:'380%',
         left:'30%',
-        top:'50%',
+        top:'0%',
         borderRadius:'10px',
         
     },
@@ -31,9 +31,10 @@ const useStyles = makeStyles({
         position:"relative",
         justifyContent:"center",
         left:'5%',
-        top:'50%',
+        top:'0%',
         width:'90%',
         height:'420%',
+        marginTop:'5%',
         borderRadius:'10px'
     },
     result:{
@@ -113,8 +114,8 @@ export const Surface = () => {
 
     return (
         <div>
-            {console.log(window.innerWidth)}
-{smallScreen && 
+    
+    {smallScreen && 
 <>      
         
         <Paper elevation={2} className={classes.border}>
